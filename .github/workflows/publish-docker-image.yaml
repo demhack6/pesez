@@ -1,7 +1,8 @@
 name: Publish Docker Image
 
 on:
-  - push
+  push:
+    branches: [ main ]
 
 jobs:
   test:
@@ -42,7 +43,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Build docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesezjunk:hello .
+        run: docker build -t ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesez/production:${{ github.sha }} .
       
       - name: Push docker image
-        run: docker push ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesezjunk:hello
+        run: docker push ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesez/production:${{ github.sha }}
