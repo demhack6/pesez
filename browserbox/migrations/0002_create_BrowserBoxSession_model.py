@@ -8,7 +8,7 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('user_dashboard', '0001_crate_browserbox_model'),
+        ('browserbox', '0001_crate_browserbox_model'),
     ]
 
     operations = [
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('ip', models.GenericIPAddressField()),
                 ('user_agent', models.TextField()),
                 ('last_active', models.DateTimeField()),
-                ('browser_box', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='browser_box', to='user_dashboard.browserbox')),
+                ('browser_box', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='browser_box', to='browserbox.browserbox')),
             ],
             options={
                 'verbose_name': 'browser_box_session',

@@ -21,5 +21,5 @@ urlpatterns = [
     path('', views.LoginView.as_view()),
     path('admin/', admin.site.urls),
     path('users/', include('django.contrib.auth.urls')),
-    path('dashboard/', include('user_dashboard.urls'))
+    path('dashboard/', include('browserbox.urls'))
 ]
