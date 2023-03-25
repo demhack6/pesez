@@ -18,7 +18,6 @@ from django.contrib.auth import views
 from django.urls import path, include
 
 urlpatterns = [
-    path('', views.LoginView.as_view()),
-    path('browsers/', include('browserbox.urls')),
     path('admin/', admin.site.urls),
+    path('', include('browserbox.urls')),
 ]
