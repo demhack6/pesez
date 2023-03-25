@@ -34,7 +34,7 @@ class BrowserBox(models.Model):
         indexes = [
             models.Index(
                 'id',
-                condition=models.Q(archived__eq=False),
+                condition=~models.Q(archived=True),
                 name='active_browser_boxes_idx',
             )
         ]
