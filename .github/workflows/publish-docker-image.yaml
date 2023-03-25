@@ -43,4 +43,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesezjunk
+          tags: ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesezjunk:hello
