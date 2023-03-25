@@ -21,5 +21,4 @@ urlpatterns = [
     path('', views.LoginView.as_view()),
     path('browsers/', include('browserbox.urls')),
     path('admin/', admin.site.urls),
-    path('users/', include('django.contrib.auth.urls'))
 ]

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pfbaas"
+name = "pesez"
 version = "0.1.0"
 description = "PolarFox Browser as a service"
 authors = ["S. Guliaev <dev.sagul@gmail.com>"]
