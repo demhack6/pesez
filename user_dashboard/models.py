@@ -15,3 +15,20 @@ class BrowserBox(models.Model):
         verbose_name = "browser_box"
         verbose_name_plural = "browser_boxes"
         ordering = ["id", ]
+
+
+class BrowserBoxSession(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    ip = models.GenericIPAddressField()
+    user_agent = models.TextField(blank=False)
+    last_active = models.DateTimeField()
+    browser_box = models.ForeignKey(BrowserBox, on_delete=models.CASCADE, related_name='browser_box')
+
+    def __str__(self):
+        # Choose better repr option.
+        return f"{self.id}"
+
+    class Meta:
+        verbose_name = "browser_box_session"
+        verbose_name_plural = "browser_box_sessions"
+        ordering = ["id", ]
