@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.get_dashboard, name='dashboard'),
+    path('get_browser/', views.get_browser_box, name='browser'),
 ]
