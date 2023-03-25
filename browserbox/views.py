@@ -17,6 +17,6 @@ def get_browser_box(request):
         worker = Worker.objects.order_by('?')[0]
         url = f'https://{worker.ip!s}:8080'
         context = {'browserbox_url': url}
-        return render(request, 'browserbox/success.html', url)
+        return render(request, 'browserbox/success.html', context)
     else:
         return render(request, 'browserbox/request.html')
