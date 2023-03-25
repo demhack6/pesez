@@ -58,7 +58,9 @@
                 <div></div>
               </div>
             </div>
-            <button class="GetAccess" id="getaccessbtn">Начать пользоваться</button>
+            <form action="./browserbox_url">
+              <button class="GetAccess" id="getaccessbtn">Начать пользоваться</button>
+            </form>
           </div>
           <ul style="list-style: none;">
             <li><img src="{% static './media/icon_timer.svg' %}" alt="Access time"><span>Доступ к клаудбраузеру на 30
@@ -85,7 +87,7 @@
   const accessspinner = document.getElementById("accessspinner");
   const resulturl = document.getElementById("resulturl");
 
-  getaccessbtn.addEventListener("click", getAccessUrl);
+  // getaccessbtn.addEventListener("click", getAccessUrl);
 
   // const showResultUrl = (url) => {
   //   accessprovider.remove()
@@ -97,7 +99,10 @@
   async function getAccessUrl() {
     accessspinner.classList.remove("hidden");
     accessprovider.classList.add("Loading")
-    const result_url = await askEdosForUrl();
+    // const result_url = await askEdosForUrl();
+    fetch('./browserbox_url', {
+      method: 'POST'
+    })
     // console.log(result_url);
     // showResultUrl(result_url);
   }
