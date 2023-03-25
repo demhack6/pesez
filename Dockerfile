@@ -13,4 +13,5 @@ COPY . /app
 WORKDIR /app
 COPY --from=builder  /build/.env /app/.env
 EXPOSE 8000
+ENV DJANGO_SETTINGS_MODULE=/app/pfbaas/production_settings.py
 ENTRYPOINT /app/.env/bin/python manage.py runserver 0.0.0.0:8000
