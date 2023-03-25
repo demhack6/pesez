@@ -5,6 +5,6 @@ from django.shortcuts import render
 
 def get_dashboard(request):
     if request.user.is_authenticated:
-        return render(request, 'user_dashboard/base.html', {'user': request.user})
+        return render(request, 'browserbox/base.html', {'user': request.user})
     else:
         raise PermissionDenied

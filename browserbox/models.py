@@ -1,15 +1,19 @@
+import datetime
 import uuid
 from django.db import models
-from users.models import CustomUser
 
+
+def _add_30_minutes():
+    return datetime.datetime.now() + datetime.timedelta(minutes=30)
 
 class BrowserBox(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     ip = models.GenericIPAddressField()
-    owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='user')
+    create_dt = models.DateTimeField(default=datetime.datetime.now)
+    terminate_dt = models.DateTimeField(default=_add_30_minutes)
 
     def __str__(self):
-        return f"{self.ip}|{self.owner}"
+        return f"{self.ip}"
 
     class Meta:
         verbose_name = "browser_box"
@@ -22,7 +26,7 @@ class BrowserBoxSession(models.Model):
     ip = models.GenericIPAddressField()
     user_agent = models.TextField(blank=False)
     last_active = models.DateTimeField()
-    browser_box = models.ForeignKey(BrowserBox, on_delete=models.CASCADE, related_name='browser_box')
+    browser_box = models.ForeignKey(BrowserBox, on_delete=models.CASCADE)
 
     def __str__(self):
         # Choose better repr option.
