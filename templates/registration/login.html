@@ -10,9 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
-  <link rel="stylesheet" href="{% static 'styles/styles.css' %}" type="text/css"/>
-  <link rel="stylesheet" href="{% static 'styles/vars.css' %}" type="text/css"/>
-  <link rel="stylesheet" href="{% static 'styles/pages/landing.css' %}" type="text/css"/>
+  <link rel="stylesheet" href="{% static 'styles/styles.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'styles/vars.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'styles/pages/landing.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'styles/pages/accessProvider.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'styles/elements/spinner.css' %}" type="text/css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&wght@400;700&display=swap"
     rel="stylesheet" type="text/css">
@@ -21,11 +23,11 @@
   <title>PESEZ</title>
 
   <style>
-  @font-face {
-    font-family: Pez;
-    src: url({% static "fonts/Pez_font.ttf" %}) format("woff2"); 
-    src: url({% static "fonts/Pez_font.ttf" %}) format("truetype"); 
-    src: url({% static "fonts/Pez_font.ttf" %}) format("woff");
+    @font-face {
+      font-family: Pez;
+      src: url("/static/fonts/Pez_font.ttf") format("woff2");
+      /* src: url({% static "fonts/Pez_font.ttf" %}) format("truetype"); 
+    src: url({% static "fonts/Pez_font.ttf" %}) format("woff"); */
     }
   </style>
 </head>
@@ -37,12 +39,32 @@
         <h1>PESEZ</h1>
         <h3>Песец. Везде. Всегда.</h3>
       </div>
-      <div class="Registration">
-        <input placeholder="Ваша @">
-        <button class="SignUp">Начать пользоваться</button>
-        <div class="Separator"></div>
-        <button class="SignIn">Войти</button>
-      </div>
+      <div class="Access">
+        <div class="AccessProvider" id="accessprovider">
+          <div class="buttonContainer">
+            <div class="lds-spinner-container hidden" id="accessspinner">
+              <div class="lds-spinner" id="accessspinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <button class="GetAccess" id="getaccessbtn">Начать пользоваться</button>
+          </div>
+          <ul style="list-style: none;">
+            <li><img src="{% static './media/icon_timer.svg' %}" alt="Access time"><span>Доступ к клаудбраузеру на 30
+                минут</span></li>
+          </ul>
+        </div>
     </section>
     <section class="ImageContainer">
       <div class="CoolImage">
@@ -51,4 +73,35 @@
     </section>
   </main>
 </body>
+
+<script>
+  function askEdosForUrl() {
+    return new Promise((resolve) => setTimeout(resolve, 1, "result_url.com"));
+  }
+
+  const getaccessbtn = document.getElementById("getaccessbtn");
+  const accessprovider = document.getElementById("accessprovider");
+  const accessresult = document.getElementById("accessresult");
+  const accessspinner = document.getElementById("accessspinner");
+  const resulturl = document.getElementById("resulturl");
+
+  getaccessbtn.addEventListener("click", getAccessUrl);
+
+  // const showResultUrl = (url) => {
+  //   accessprovider.remove()
+  //   accessresult.hidden = false;
+  //   resulturl.textContent = url
+  //   resulturl.href = url
+  // }
+
+  async function getAccessUrl() {
+    accessspinner.classList.remove("hidden");
+    accessprovider.classList.add("Loading")
+    const result_url = await askEdosForUrl();
+    // console.log(result_url);
+    // showResultUrl(result_url);
+  }
+
+</script>
+
 </html>
