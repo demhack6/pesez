@@ -1,10 +1,19 @@
 from django.core.exceptions import PermissionDenied
-from django.http import HttpResponse
 from django.shortcuts import render
+from .models import BrowserBox
+
+# TODO remove function later
+import random
+import socket
+import struct
+def get_random_ip():
+    return socket.inet_ntoa(struct.pack('>I', random.randint(1, 0xffffffff)))
 
 
-def get_dashboard(request):
+def get_browser_box(request):
     if request.user.is_authenticated:
-        return render(request, 'browserbox/base.html', {'user': request.user})
+        bb = BrowserBox(ip=get_random_ip())
+        bb.save()
+        return render(request, f'browsers/{bb.id}', {'browserbox': bb})
     else:
         raise PermissionDenied
