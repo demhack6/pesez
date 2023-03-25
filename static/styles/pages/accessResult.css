@@ -1,0 +1,36 @@
+.AccessResult {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.AccessResult a {
+  font-size: 24px;
+  color: var(--palette-white);
+  background-color: var(--palette-accent);
+  background: linear-gradient(
+    180deg,
+    rgba(112, 154, 249, 1) 0%,
+    rgba(95, 112, 234, 1) 100%
+  );
+  padding: 48px 64px;
+  flex-grow: 1;
+
+  border-radius: 16px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.AccessResult button {
+  padding-left: 48px;
+  padding-right: 48px;
+  cursor: pointer;
+  border-radius: 16px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #2F3237;
+}
+
+.AccessResult button:active {
+  background-color: #1C232E;
+}

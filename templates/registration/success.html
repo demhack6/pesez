@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+  <link rel="stylesheet" href="{% static 'styles/styles.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'styles/vars.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'styles/pages/landing.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'styles/elements/spinner.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'styles/pages/accessResult.css' %}" type="text/css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&wght@400;700&display=swap"
+    rel="stylesheet" type="text/css">
+
+  <link rel="icon" href="{% static "./media/icon_2.png" %}" type="image/icon type">
+  <title>PESEZ</title>
+
+  <style>
+    @font-face {
+      font-family: Pez;
+      src: url("/static/fonts/Pez_font.ttf") format("woff2");
+      /* src: url({% static "fonts/Pez_font.ttf" %}) format("truetype"); 
+    src: url({% static "fonts/Pez_font.ttf" %}) format("woff"); */
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section>
+      <div class="Heading">
+        <h1>PESEZ</h1>
+        <h3>Песец. Везде. Всегда.</h3>
+      </div>
+      <div class="Access">
+        <div class="AccessResult" id="accessresult" hidden>
+          <a class="Result" id="resulturl" href={{ browserbox_url }}>{{ browserbox_url }}</a>
+          <button class="ButtonCopy"><img src="{% static './media/icon_copy.svg' %}"></button>
+        </div>
+      </div>
+    </section>
+    <section class="ImageContainer">
+      <div class="CoolImage">
+        <h3>Архитектура нашего проекта. Будет здесь показана.</h3>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

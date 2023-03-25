@@ -9,7 +9,7 @@ h1 {
   color: var(--palette-dark);
 }
 
-h2, h3, h4, h5, p, input, button {
+h2, h3, h4, h5, p, input, button, li, a {
   font-family: 'Open Sans', sans-serif;
   color: var(--palette-dark);
 }
