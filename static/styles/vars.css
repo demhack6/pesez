@@ -1,0 +1,17 @@
+:root {
+  --palette-dark: #453F3F;
+  --palette-white: #F4F5FA;
+  --palette-gray: #CFD3DF;
+  --palette-placeholder: #D9D9D9;
+  --palette-accent: #5A86F8; 
+  --palette-input: #DBE2EC;
+}
+
+:root {
+  --p-sm: 8px;
+  --p-m: 16px;
+  --p-a: 32px;
+  --p-b: 64px;
+  --p-l: 92px;
+  --p-el: 128px;
+}

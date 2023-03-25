@@ -1,0 +1,21 @@
+html, body {
+  /* height: 100%; */
+  margin: 0;
+}
+
+
+h1 {
+  font-family: 'Pez', sans-serif;
+  color: var(--palette-dark);
+}
+
+h2, h3, h4, h5, p, input, button {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--palette-dark);
+}
+
+input, button {
+  border: none;
+  font-weight: bold;
+  /* background-color: white; */
+}
