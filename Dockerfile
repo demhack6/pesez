@@ -12,4 +12,5 @@ FROM python:3.10-slim-bullseye
 COPY . /app
 WORKDIR /app
 COPY --from=builder  /build/.env /app/.env
+EXPOSE 8000
 ENTRYPOINT /app/.env/bin/python manage.py runserver 0.0.0.0:8000
