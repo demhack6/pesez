@@ -10,12 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
-  <link rel="stylesheet" href={% static "styles/styles.css"} />
-  <link rel="stylesheet" href={% static "styles/vars.css"} />
-  <link rel="stylesheet" href={% static "styles/pages/landing.css"} />
+  <link rel="stylesheet" href="{% static 'styles/styles.css' %}" type="text/css"/>
+  <link rel="stylesheet" href="{% static 'styles/vars.css' %}" type="text/css"/>
+  <link rel="stylesheet" href="{% static 'styles/pages/landing.css' %}" type="text/css"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75...00&wght@400;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&wght@400;700&display=swap"
+    rel="stylesheet" type="text/css">
 
   <link rel="icon" href={% static "./media/icon_2.png"} type="image/icon type">
   <title>PESEZ</title>
@@ -23,9 +23,9 @@
   <style>
   @font-face {
     font-family: Pez;
-    src: url('{% static "fonts/Pez_font.ttf" %} format("woff2")'); 
-    src: url('{% static "fonts/Pez_font.ttf") %} format("truetype")'); 
-    src: url('{% static "fonts/Pez_font.ttf") %} format("woff")');
+    src: url({% static "fonts/Pez_font.ttf" %}) format("woff2"); 
+    src: url({% static "fonts/Pez_font.ttf" %}) format("truetype"); 
+    src: url({% static "fonts/Pez_font.ttf" %}) format("woff");
     }
   </style>
 </head>
@@ -55,5 +55,4 @@
     </section>
   </main>
 </body>
-
 </html>
