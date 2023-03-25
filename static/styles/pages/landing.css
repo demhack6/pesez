@@ -1,0 +1,108 @@
+main {
+  display: flex;
+  margin: 10vh 200px;
+  margin-bottom: 20vh;
+  height: 70vh;
+  /* box-sizing: border-box; */
+}
+
+body {
+  background-color: var(--palette-white);
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.Heading h1 {
+  font-size: 160px;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+.Heading h3 {
+  font-size: 48px;
+  font-stretch: 75%;
+  margin: 16px 0;
+  /* font-weight: 600; */
+  /* font-display: ; */
+}
+
+.Registration {
+  display: grid;
+  /* margin-bottom: 10vh; */
+  width: 100%;
+  grid-template-columns: auto 320px;
+  grid-template-rows: 72px auto 72px;
+  /* place-items: center; */
+}
+
+
+.Registration input {
+  grid-area: 1 / 1;
+  background-color: var(--palette-input);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-weight: normal;
+  padding-left: 32px;
+}
+
+.SignUp  {
+  background-color: var(--palette-accent);
+  color: var(--palette-white);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+.Separator {
+  grid-area: 2 / 2;
+  display: block;
+  height: 4px;
+  width: 92%;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  border-radius: 4px;
+  background-color: var(--palette-gray);
+}
+
+.SignIn {
+  border: 4px solid var(--palette-accent);
+  grid-area: 3 / 2;
+  color: var(--palette-accent);
+  background-color: transparent;
+}
+
+input, button {
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+.CoolImage {
+  width: 100%;
+  height: 100%;
+  background-color: var(--palette-placeholder);
+  border-radius: 48px 256px 48px 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CoolImage h3 {
+    font-size: 48px;
+    font-stretch: 75%;
+    width: 60%;
+}
+
+.ImageContainer {
+  /* padding: 10vh;
+  m */
+  margin-left: 200px;
+  flex-grow: 1;
+}
