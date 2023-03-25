@@ -15,7 +15,7 @@ def get_random_ip():
 def get_browser_box(request):
     if  request.method == 'POST':
         worker = Worker.objects.order_by('?')[0]
-        url = f'https://{worker.ip!s}:8080'
+        url = f'http://{worker.ip!s}:8080'
         context = {'browserbox_url': url}
         return render(request, 'browserbox/success.html', context)
     else:
