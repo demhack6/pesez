@@ -1,8 +1,7 @@
 name: Publish Docker Image
 
 on:
-  push:
-    branches: [ main ]
+  - push
 
 jobs:
   test:
@@ -44,4 +43,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.REGISTRY_ID }}/pesez/production:${{ github.sha }}
+          tags: ${{ secrets.REGISTRY_ID }}/pesez/junk:latest
