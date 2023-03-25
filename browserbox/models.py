@@ -36,3 +36,17 @@ class HistoryBrowserBox(models.Model):
         verbose_name_plural = "history_browser_boxes"
         ordering = ["id", ]
 
+
+class Worker(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    ip = models.GenericIPAddressField()
+    available = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.id}"
+
+    class Meta:
+        verbose_name = "worker"
+        verbose_name_plural = "workers"
+        ordering = ["id", ]
+
