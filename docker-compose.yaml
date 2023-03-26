@@ -7,4 +7,4 @@ services:
   static:
     image: cr.yandex/crpnh4kbjmahru5cb2eh/staticsite/production:latest
     ports:
-      - '80:80'
+      - '8000:8000'
