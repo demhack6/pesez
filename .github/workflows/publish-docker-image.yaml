@@ -46,7 +46,11 @@ jobs:
         run: docker build -t ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesez/production:${{ github.sha }} --file docker/pesez.Dockerfile .
       
       - name: Push docker image
-        run: docker push ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesez/production:${{ github.sha }}
+        run: |
+          docker push ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesez/production:${{ github.sha }}
+          docker ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesez/production:${{ github.sha }} ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesez/production:latest
+          docker push ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/pesez/production:latest
+
 
   build-static:
     runs-on: ubuntu-latest
@@ -71,4 +75,7 @@ jobs:
         run: docker build -t ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/staticsite/production:${{ github.sha }} --file docker/staticsite.Dockerfile .
       
       - name: Push docker image
-        run: docker push ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/staticsite/production:${{ github.sha }}
+        run: |
+          docker push ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/staticsite/production:${{ github.sha }}
+          docker ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/staticsite/production:${{ github.sha }} ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/staticsite/production:latest
+          docker push ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.REGISTRY_ID }}/staticsite/production:latest
