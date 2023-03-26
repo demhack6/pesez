@@ -6,6 +6,8 @@
   --palette-accent: #5A86F8; 
   --palette-input: #DBE2EC;
   --palette-output: #2F3237;
+  --palette-semidark: rgb(142, 142, 190);
+  --palette-github: #24292F;
 }
 
 :root {
