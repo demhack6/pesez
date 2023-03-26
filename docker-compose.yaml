@@ -8,3 +8,9 @@ services:
     image: cr.yandex/crpnh4kbjmahru5cb2eh/staticsite/production:latest
     ports:
       - '8000:8000'
+
+  celery_worker:
+    image: cr.yandex/crpnh4kbjmahru5cb2eh/celery_worker/production:latest
+
+  celery_beat:
+    image: cr.yandex/crpnh4kbjmahru5cb2eh/celery_beat/production:latest
