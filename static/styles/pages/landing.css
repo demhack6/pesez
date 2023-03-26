@@ -63,27 +63,41 @@ footer {
   /* display: block; */
   position: absolute;
   bottom: 0;
-  margin-bottom: 32px;
+  margin-bottom: 5vh;
   right: 0;
-  margin-right: 10vw;
+  margin-right: 6.6vw;
   display: flex;
 
-  font-size: 32px;
+  font-size: 18px;
   justify-items: center;
   align-items: center;
 }
 
 footer a, footer span {
+  /* color: var(--palette-github); */
   color: var(--palette-github);
-  font-stretch: 75%;
+  /* font-stretch: 75%; */
+  font-weight: bold;
 }
-
 
 footer img {
   height: 32px;
+  /* width: 24px; */
   margin-right: 8px;
 }
 
 footer img:last-child {
-  height: 28px;
+  height: 18px;
+  /* line-height: 40px;
+   */
+   margin-top: 2px;
+}
+
+.bcg {
+  position: absolute;
+  bottom: 0;
+  /* margin-bottom: 32px; */
+  right: 0px;
+  width: 60vw;
+  z-index: -1;
 }
