@@ -48,3 +48,28 @@ main section {
   margin-left: 200px;
   flex-grow: 1;
 }
+
+footer {
+  display: block;
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+
+  font-size: 32px;
+  justify-items: center;
+  align-items: center;
+}
+
+footer a, footer span {
+  color: var(--palette-gray)
+}
+
+footer img {
+  height: 32px;
+  margin-right: 8px;
+}
+
+footer img:last-child {
+  height: 28px;
+}
