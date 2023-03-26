@@ -7,5 +7,5 @@ RUN poetry install
 RUN poetry run python manage.py collectstatic --noinput
 
 FROM nginx:1.22.1
-COPY nginx/proxy.conf /etc/nginx/conf.d/
+COPY nginx/proxy.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /build/dst /var/www/data/static
