@@ -8,9 +8,9 @@
 }
 
 .GetAccess {
-  padding: 2vw 5vw;
+  padding: 1.6vw 3vw;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 22px;
   border-radius: 16px;
   background-color: var(--palette-accent);
   color: var(--palette-white);
@@ -50,7 +50,7 @@ li:last-child {
 }
 
 ul span {
-  font-size: 24px;
+  font-size: 18px;
   margin-left: 4px;
   max-width: 15vh;
 }
