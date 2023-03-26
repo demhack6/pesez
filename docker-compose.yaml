@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  web: 
+    image: cr.yandex/crpnh4kbjmahru5cb2eh/pesez/production:latest
+
+  static:
+    image: cr.yandex/crpnh4kbjmahru5cb2eh/staticsite/production:latest
+    ports:
+      - '80:80'

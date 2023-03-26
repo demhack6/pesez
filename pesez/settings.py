@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 CSRF_TRUSTED_ORIGINS = ['https://*.pesez.online','http://*.127.0.0.1']
 
 
@@ -123,7 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = ''
+STATIC_ROOT = BASE_DIR / 'dst'
 STATICFILES_DIRS = ('static',)
 
 # Default primary key field type
