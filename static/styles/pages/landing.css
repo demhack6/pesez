@@ -1,8 +1,10 @@
 main {
   display: flex;
-  margin: 10vh 200px;
-  margin-bottom: 20vh;
-  height: 70vh;
+  margin: 10vh 10vw;
+  margin-bottom: 16vh;
+  /* height: 100vh; */
+  box-sizing: border-box;
+  height: 74vh;
   /* box-sizing: border-box; */
 }
 
@@ -29,15 +31,21 @@ main section {
 }
 
 .CoolImage {
-  width: 100%;
-  height: 100%;
-  background-color: var(--palette-placeholder);
-  border-radius: 48px 256px 48px 256px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* width: 80%; */
+  /* height: 80%; */
+  /* background-color: var(--palette-placeholder); */
+  /* border-radius: 48px 256px 48px 256px; */
+   display: flex;
+  /* justify-content: center; */
+  align-items: end;
 }
 
+.CoolImage img {
+  width: 75%;
+  flex-grow: 1;
+}
+/* .CoolImage  */
+/*  */
 .CoolImage h3 {
   font-size: 48px;
   font-stretch: 75%;
@@ -47,4 +55,35 @@ main section {
 .ImageContainer {
   margin-left: 200px;
   flex-grow: 1;
+  justify-content: end;
+  align-items: center;
+}
+
+footer {
+  /* display: block; */
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 32px;
+  right: 0;
+  margin-right: 10vw;
+  display: flex;
+
+  font-size: 32px;
+  justify-items: center;
+  align-items: center;
+}
+
+footer a, footer span {
+  color: var(--palette-github);
+  font-stretch: 75%;
+}
+
+
+footer img {
+  height: 32px;
+  margin-right: 8px;
+}
+
+footer img:last-child {
+  height: 28px;
 }
